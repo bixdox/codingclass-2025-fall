@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nina's portfolio</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header>
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Nina Toro</h1>
+                <p class="lead">Welcome to my portfolio website!</p>
+            </div>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <nav id="primary-nav">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <div class="col">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Hello! I'm Nina Toro, a passionate UX designer and web developer with a love for creating beautiful and
+                    functional websites. I specialize in front-end development and have experience with Figma, HTML, CSS,
+                    and JavaScript.</p>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <ul class="projects-list">
+                    <li>
+                        <h3>Project One</h3>
+                        <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                    </li>
+                    <li>
+                        <h3>Project Two</h3>
+                        <p>An e-commerce website with a user-friendly interface and secure payment gateway.</p>
+                    </li>
+                    <li>
+                        <h3>Project Three</h3>
+                        <p>A blog platform that allows users to create and share their own content.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>If you'd like to get in touch, feel free to reach out via email at <a
+                        href="mailto:example@stud.mome.hu">example@stud.mome.hu</a> or connect with me on
+                    <a href="https://www.linkedin.com/in/nina-toro-123456789/">LinkedIn</a>.
+                </p>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul class="skills-list" aria-label="Skills list">
+                    <li>UX Design</li>
+                    <li>Web Development</li>
+                    <li>Figma</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </section>
+
+            <section id="awards">
+                <h2>Awards</h2>
+                <div class="table-wrap">
+                    <table>
+                        <tr>
+                            <th>Award</th>
+                            <th>Year</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Best UX Design</td>
+                            <td>2023</td>
+                            <td>Received for outstanding user experience design in a web application project.</td>
+                        </tr>
+                        <tr>
+                            <td>Web Developer of the Year</td>
+                            <td>2022</td>
+                            <td>Awarded for exceptional skills in front-end development and innovative solutions.</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="images">
+                <h2>Images</h2>
+                <p>Here are some images showcasing my work and design process:</p>
+                <div class="image-grid">
+                    <figure class="image-card">
+                        <img class="work-image" src="user1.jpg" alt="Design 1">
+                        <figcaption class="image-caption">Design 1</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nina Toro. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.querySelector('.nav-toggle');
+            var header = document.querySelector('header');
+            var nav = document.getElementById('primary-nav');
+            if (!btn || !header || !nav) return;
+            btn.addEventListener('click', function () {
+                var expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                header.classList.toggle('nav-open');
+            });
+            // close menu when a nav link is clicked (mobile)
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    header.classList.remove('nav-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
